@@ -2,7 +2,7 @@ public class Employee {
     private String nome;
     private String sobrenome;
     private double salario;
-
+    public int porcentagemAumento;
 
     public Employee(String nome, String sobrenome, double salario){
         this.nome = nome;
@@ -41,8 +41,12 @@ public class Employee {
         System.out.printf("Salário anual de %s %s é %.2f%n",this.getNome(),this.getSobrenome(),salario*12);
     }
 
+    public void setPorcentagemAumento (int porcentagemAumento){
+        this.porcentagemAumento = porcentagemAumento;
+    }
     public void aumentoSalarial(){
-        System.out.printf("Novo salário de %s é R$%.2f%n",this.getNome(),salario*1.1);
+        System.out.printf("Aumento salário de %s é R$%.2f%n",this.getNome(),salario*(porcentagemAumento/100));
+
     }
 }
 
